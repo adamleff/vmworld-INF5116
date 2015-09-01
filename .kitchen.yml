@@ -1,0 +1,18 @@
+---
+driver:
+  name: vagrant
+  provider: vmware_fusion
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-6.5
+  - name: centos-7.1
+
+suites:
+  - name: default
+    run_list:
+      - recipe[vmworld::default]
+    attributes:
+      vmworld_size: big
